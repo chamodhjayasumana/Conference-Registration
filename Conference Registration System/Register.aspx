@@ -40,6 +40,22 @@
                         ForeColor="Red" />
                     <br />
 
+                    <!-- Gender Selection -->
+                    <label for="ddlGender">Gender:</label>
+                    <asp:DropDownList ID="ddlGender" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlGender_SelectedIndexChanged">
+                        <asp:ListItem Text="Select" Value="" />
+                        <asp:ListItem Text="Male" Value="Male" />
+                        <asp:ListItem Text="Female" Value="Female" />
+                        <asp:ListItem Text="Other" Value="Other" />
+                    </asp:DropDownList>
+                    <br />
+
+                     <!-- Dress Code Selection -->
+                    <label for="ddlDressCode">Select Dress Code:</label>
+                    <asp:DropDownList ID="ddlDressCode" runat="server">
+                    </asp:DropDownList>
+                    <br />
+
                     
                     <label for="ddlPaymentMethod">Select Payment Method:</label>
                     <asp:DropDownList ID="ddlPaymentMethod" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlPaymentMethod_SelectedIndexChanged">

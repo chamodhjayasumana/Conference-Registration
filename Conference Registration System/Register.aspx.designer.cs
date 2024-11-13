@@ -96,6 +96,24 @@ namespace Conference_Registration_System
         protected global::System.Web.UI.WebControls.RegularExpressionValidator regPhoneValidator;
 
         /// <summary>
+        /// ddlGender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlGender;
+
+        /// <summary>
+        /// ddlDressCode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlDressCode;
+
+        /// <summary>
         /// ddlPaymentMethod control.
         /// </summary>
         /// <remarks>

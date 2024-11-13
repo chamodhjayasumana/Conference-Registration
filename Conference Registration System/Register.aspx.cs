@@ -16,14 +16,6 @@ namespace Conference_Registration_System
             if (IsPostBack)
             {
 
-                Session["UserName"] = txtName.Text;
-                Session["UserEmail"] = txtEmail.Text;
-                Session["UserPhoneNumber"] = txtPhoneNumber.Text;
-
-                lblStatus.Text = "Registration successful!";
-                Response.Redirect("Confirmation.aspx", false);
-
-
             }
         }
       
@@ -36,6 +28,9 @@ namespace Conference_Registration_System
                 Session["UserName"] = txtName.Text;
                 Session["UserEmail"] = txtEmail.Text;
                 Session["UserPhoneNumber"] = txtPhoneNumber.Text;
+                Session["PaymentMethod"] = ddlPaymentMethod.SelectedValue;
+                Session["Gender"] = ddlGender.SelectedValue;
+                Session["DressCode"] = ddlDressCode.SelectedValue;
                 Response.Redirect("Confirmation.aspx");
             }  
              else
@@ -50,6 +45,27 @@ namespace Conference_Registration_System
         protected void ddlPaymentMethod_SelectedIndexChanged(object sender, EventArgs e)
         {
             Session["PaymentMethod"]=ddlPaymentMethod.SelectedValue;
+        }
+
+        protected void ddlGender_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ddlDressCode.Items.Clear();
+
+            if (ddlGender.SelectedValue == "Male")
+            {
+                ddlDressCode.Items.Add("Formal Suit");
+                ddlDressCode.Items.Add("Casual");
+            }
+            else if (ddlGender.SelectedValue == "Female")
+            {
+                ddlDressCode.Items.Add("Business Attire");
+                ddlDressCode.Items.Add("Traditional Dress");
+            }
+            else if (ddlGender.SelectedValue == "Other")
+            {
+                ddlDressCode.Items.Add("Business Casual");
+                ddlDressCode.Items.Add("Smart Casual");
+            }
         }
     }
 }
