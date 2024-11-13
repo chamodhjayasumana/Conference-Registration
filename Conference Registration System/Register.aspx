@@ -48,15 +48,6 @@
                         <asp:ListItem Text="PayPal" Value="PayPal" />
                     </asp:DropDownList>
 
-                   
-                    <asp:Panel ID="pnlPayPal" runat="server" Visible="false">
-                        <label for="txtPayPalEmail">PayPal Email:</label>
-                        <asp:TextBox ID="txtPayPalEmail" runat="server" />
-                        <asp:RegularExpressionValidator ID="regPayPalEmailValidator" runat="server" 
-                            ControlToValidate="txtPayPalEmail" ValidationExpression="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" 
-                            ErrorMessage="Please enter a valid PayPal email address." ForeColor="Red" />
-                    </asp:Panel>
-
                     <br />
                     <asp:Button ID="btnSubmit" runat="server" Text="Register" OnClick="btnSubmit_Click" />
                 </ContentTemplate>

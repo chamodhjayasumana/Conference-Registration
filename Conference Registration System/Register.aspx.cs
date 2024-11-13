@@ -15,47 +15,42 @@ namespace Conference_Registration_System
            
             if (IsPostBack)
             {
-                
-                if (Page.IsValid)
-                {
 
-                    Session["UserFName"] = txtName.Text;
-                    Session["UserEmail"] = txtEmail.Text;
-                    Session["UserPhoneNumber"] = txtPhoneNumber.Text;
+                Session["UserName"] = txtName.Text;
+                Session["UserEmail"] = txtEmail.Text;
+                Session["UserPhoneNumber"] = txtPhoneNumber.Text;
 
-                    lblStatus.Text = "Registration successful!";
+                lblStatus.Text = "Registration successful!";
+                Response.Redirect("Confirmation.aspx", false);
 
-                    
-                    Response.Redirect("Confirmation.aspx", false);
-                }
+
             }
         }
-
-        
-        protected void ddlPaymentMethod_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (ddlPaymentMethod.SelectedValue == "PayPal")
-            {
-                pnlPayPal.Visible = true;
-            }
-            else
-            {
-                pnlPayPal.Visible = false;
-            }
-        }
+      
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             if (Page.IsValid)
             {
                
-                Session["UserFName"] = txtName.Text;
+                Session["UserName"] = txtName.Text;
                 Session["UserEmail"] = txtEmail.Text;
                 Session["UserPhoneNumber"] = txtPhoneNumber.Text;
                 Response.Redirect("Confirmation.aspx");
+            }  
+             else
+            {
+                lblStatus.Text = "Please fill out the form correctly.";
             }
+
+
+
+        }
+
+        protected void ddlPaymentMethod_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Session["PaymentMethod"]=ddlPaymentMethod.SelectedValue;
         }
     }
 }
-
 
