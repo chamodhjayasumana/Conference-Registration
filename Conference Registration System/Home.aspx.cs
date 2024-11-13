@@ -17,12 +17,15 @@ namespace Conference_Registration_System
                 lblGreeting.Visible = true;
                 btnLogin.Visible = false;
                 btnLogout.Visible = true;
+                btnRegister.Visible = true;
             }
-            else
+            else 
             {
-                lblGreeting.Visible = false;
-                btnLogin.Visible = true;
-                btnLogout.Visible = false;
+                lblGreeting.Text = "Hello, " + Session["AdminName"].ToString();
+                lblGreeting.Visible = true;
+                btnLogin.Visible = false;
+                btnLogout.Visible = true;
+                btnRegister.Visible = false;
             }
         }
 
@@ -35,6 +38,11 @@ namespace Conference_Registration_System
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             Response.Redirect("Login.aspx");
+        }
+
+        protected void btnRegister_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Register.aspx");
         }
     }
 }

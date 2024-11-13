@@ -19,6 +19,9 @@
 
             <%-- If user is not logged in, show login link --%>
             <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" Visible="true" /><br />
+
+            <asp:Button ID="btnRegister" runat="server" Text="Register" OnClick="btnRegister_Click" Visible="true" /><br />
+
     </div>
     </form>
 </body>
