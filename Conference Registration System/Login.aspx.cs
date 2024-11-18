@@ -14,7 +14,6 @@ namespace Conference_Registration_System
         {
             if (!IsPostBack)
             {
-                // Clear error messages on initial page load.
                 Label3.Text = "";
             }
         }
