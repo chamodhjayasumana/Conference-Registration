@@ -17,7 +17,7 @@ namespace Conference_Registration_System
 
         protected void ddlRole_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lblMessage.Text = ""; 
+            Label3.Text = ""; 
         }
 
 
@@ -43,7 +43,7 @@ namespace Conference_Registration_System
                 }
                 else
                 {
-                    lblMessage.Text = "Invalid username or password.";
+                    Label3.Text = "Invalid username or password.";
                     
                 }
             }
