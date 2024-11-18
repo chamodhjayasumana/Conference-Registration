@@ -51,13 +51,13 @@ namespace Conference_Registration_System
         protected global::System.Web.UI.WebControls.TextBox txtName;
 
         /// <summary>
-        /// regNameValidator control.
+        /// RegularExpressionValidator1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator regNameValidator;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
 
         /// <summary>
         /// txtEmail control.
@@ -69,13 +69,13 @@ namespace Conference_Registration_System
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
 
         /// <summary>
-        /// regEmailValidator control.
+        /// RegularExpressionValidator2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator regEmailValidator;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
 
         /// <summary>
         /// txtPhoneNumber control.
@@ -87,13 +87,13 @@ namespace Conference_Registration_System
         protected global::System.Web.UI.WebControls.TextBox txtPhoneNumber;
 
         /// <summary>
-        /// regPhoneValidator control.
+        /// RegularExpressionValidator3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator regPhoneValidator;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator3;
 
         /// <summary>
         /// ddlGender control.
