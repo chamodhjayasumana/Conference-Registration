@@ -12,7 +12,11 @@ namespace Conference_Registration_System
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                // Clear error messages on initial page load.
+                Label3.Text = "";
+            }
         }
 
         protected void ddlRole_SelectedIndexChanged(object sender, EventArgs e)
@@ -24,27 +28,30 @@ namespace Conference_Registration_System
         protected void btnLogin_Click(object sender, EventArgs e)
         {
 
-            if (Page.IsValid) 
+            if (Page.IsValid) // Ensure validation controls are satisfied.
             {
                 string selectedRole = ddlRole.SelectedValue;
-                string Username = txtUsername.Text;
-                string Password = txtPassword.Text;
+                string username = txtUsername.Text.Trim();
+                string password = txtPassword.Text.Trim();
 
-                
-                if (selectedRole == "Admin" && Username == "admin" && Password == "adminpass123!")
+                // Placeholder: Replace this with a secure database check.
+                if (selectedRole == "Admin" && username == "admin" && password == "adminpass123!")
                 {
-                    Session["AdminName"] = txtUsername.Text;
+                    Session["Role"] = "Admin";
+                    Session["Username"] = username;
                     Response.Redirect("Home.aspx");
                 }
-                else if (selectedRole == "User" && Username == "user" && Password == "userpass123!")
+                else if (selectedRole == "User" && username == "user" && password == "userpass123!")
                 {
-                    Session["UserName"] = txtUsername.Text;
+                    Session["Role"] = "User";
+                    Session["Username"] = username;
                     Response.Redirect("Home.aspx");
                 }
                 else
                 {
-                    Label3.Text = "Invalid username or password.";
-                    
+                    // Display an error message for invalid login attempts.
+                    Label3.Text = "Invalid username, password, or role selection.";
+                    Label3.CssClass = "text-danger"; // Add a Bootstrap class for styling if applicable.
                 }
             }
 
@@ -52,7 +59,7 @@ namespace Conference_Registration_System
 
 
 
-            
+
 
         }
     }

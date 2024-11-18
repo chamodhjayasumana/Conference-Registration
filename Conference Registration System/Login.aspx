@@ -38,7 +38,7 @@
                                  </asp:DropDownList>
                                  <asp:RequiredFieldValidator ID="rfvRole" runat="server" ControlToValidate="ddlRole" InitialValue="0" ErrorMessage="Please select a role." ForeColor="Red" />
                              </div>
-                            
+                       
                              <!-- Username -->
                              <div class="mb-3">
                                  
@@ -83,4 +83,3 @@
     </form>
 </body>
 </html>
-

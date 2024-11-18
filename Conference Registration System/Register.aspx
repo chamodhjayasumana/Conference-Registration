@@ -31,41 +31,60 @@
                                 <!-- Full Name -->
                                 <div class="mb-3">
                                     <label for="txtName" class="form-label">Full Name:</label>
-                                    <asp:TextBox ID="txtName" runat="server" CssClass="form-control" />
+                                    <asp:TextBox ID="txtName" runat="server" CssClass="form-control"  ValidationGroup="RegistrationGroup"  />
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
                                         ControlToValidate="txtName" ValidationExpression="^[a-zA-Z\s]+$" 
-                                        ErrorMessage="Name should only contain letters and spaces." CssClass="text-danger" />
+                                        ErrorMessage="Name should only contain letters and spaces." CssClass="text-danger"
+                                        ValidationGroup="RegistrationGroup"/>
+
                                 </div>
 
                                  <!-- Email Address -->
                                  <div class="mb-3">
                                      <label for="txtEmail" class="form-label">Email Address:</label>
-                                     <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" />
+                                     <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" ValidationGroup="RegistrationGroup" />
                                      <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
                                          ControlToValidate="txtEmail" ValidationExpression="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" 
-                                         ErrorMessage="Please enter a valid email address." CssClass="text-danger" />
+                                         ErrorMessage="Please enter a valid email address." 
+                                         CssClass="text-danger" ValidationGroup="RegistrationGroup" />
+                                      <asp:RegularExpressionValidator ID="RegularExpressionValidator8" runat="server"
+                                         ControlToValidate="txtEmail" ValidationExpression="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                                         ErrorMessage="Please enter a valid email address." CssClass="text-danger"
+                                         ValidationGroup="RegistrationGroup" />
                                  </div>
 
                                  <!-- Phone Number -->
                                  <div class="mb-3">
                                      <label for="txtPhoneNumber" class="form-label">Telephone Number:</label>
-                                     <asp:TextBox ID="txtPhoneNumber" runat="server" CssClass="form-control" />
+                                     <asp:TextBox ID="txtPhoneNumber" runat="server" CssClass="form-control" ValidationGroup="RegistrationGroup" />
                                      <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" 
                                          ControlToValidate="txtPhoneNumber" ValidationExpression="^\d{10}$" 
-                                         ErrorMessage="Please enter a valid 10-digit phone number." CssClass="text-danger" />
+                                         ErrorMessage="Please enter a valid 10-digit phone number."
+                                         CssClass="text-danger" ValidationGroup="RegistrationGroup"/>
+                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator9" runat="server"
+                                        ControlToValidate="txtPhoneNumber" ValidationExpression="^\d{10}$"
+                                        ErrorMessage="Please enter a valid 10-digit phone number." CssClass="text-danger"
+                                        ValidationGroup="RegistrationGroup" />
+
                                  </div>
     
                                  <!-- Gender -->
                                  <div class="mb-3">
                                      <label for="ddlGender" class="form-label">Gender:</label>
                                      <asp:DropDownList ID="ddlGender" runat="server" AutoPostBack="True" 
-                                         OnSelectedIndexChanged="ddlGender_SelectedIndexChanged" CssClass="form-select">
+                                         OnSelectedIndexChanged="ddlGender_SelectedIndexChanged" CssClass="form-select"
+                                         ValidationGroup="RegistrationGroup">
                                          <asp:ListItem Text="Select" Value="" />
                                          <asp:ListItem Text="Male" Value="Male" />
                                          <asp:ListItem Text="Female" Value="Female" />
                                          <asp:ListItem Text="Other" Value="Other" />
                                      </asp:DropDownList>
+                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
+                                        ControlToValidate="ddlGender" InitialValue=""
+                                        ErrorMessage="Please select your gender." CssClass="text-danger"
+                                        ValidationGroup="RegistrationGroup" />
                                  </div>
+
 
                                  <!-- Dress Code -->
                                 <div class="mb-3">
@@ -78,13 +97,19 @@
                                 <div class="mb-3">
                                     <label for="ddlPaymentMethod" class="form-label">Select Payment Method:</label>
                                     <asp:DropDownList ID="ddlPaymentMethod" runat="server" AutoPostBack="True" 
-                                        OnSelectedIndexChanged="ddlPaymentMethod_SelectedIndexChanged" CssClass="form-select">
+                                        OnSelectedIndexChanged="ddlPaymentMethod_SelectedIndexChanged" CssClass="form-select"
+                                        ValidationGroup="RegistrationGroup">
                                         <asp:ListItem Text="Select" Value="" />
                                         <asp:ListItem Text="Credit Card" Value="CreditCard" />
                                         <asp:ListItem Text="PayPal" Value="PayPal" />
                                     </asp:DropDownList>
+                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server"
+                                         ControlToValidate="ddlPaymentMethod" InitialValue=""
+                                         ErrorMessage="Please select a payment method." CssClass="text-danger"
+                                         ValidationGroup="RegistrationGroup" />
                                 </div>
         
+
                                 <!-- Submit Button -->
                                 <div class="d-grid">
                                     <asp:Button ID="btnSubmit" runat="server" Text="Register" 
@@ -111,4 +136,3 @@
     </form>
 </body>
 </html>
-

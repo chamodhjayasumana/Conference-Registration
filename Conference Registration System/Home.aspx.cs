@@ -11,23 +11,60 @@ namespace Conference_Registration_System
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["UserName"] != null)
+            if (!IsPostBack)
             {
-                lblGreeting.Text = "Hello, " + Session["UserName"].ToString();
-                lblGreeting.Visible = true;
-                btnLogin.Visible = false;
-                btnLogout.Visible = true;
-                btnRegister.Visible = true;
+                // Check if session data exists.
+                if (Session["Role"] == null || Session["Username"] == null)
+                {
+                    // Redirect to login if no session data is found.
+                    Response.Redirect("Login.aspx");
+                }
+                else
+                {
+                    // Get session details.
+                    string role = Session["Role"].ToString();
+                    string username = Session["Username"].ToString();
+
+                    // Show or hide buttons based on role.
+                    if (role == "Admin")
+                    {
+                        lblGreeting.Text = "Hello, " + Session["Username"].ToString();
+                        lblGreeting.Visible = true;
+                        btnLogin.Visible = false;
+                        btnLogout.Visible = true;
+                        btnRegister.Visible = false;
+                    }
+                    else if (role == "User")
+                    {
+                        lblGreeting.Text = "Hello, " + Session["UserName"].ToString();
+                        lblGreeting.Visible = true;
+                        btnLogin.Visible = false;
+                        btnLogout.Visible = true;
+                        btnRegister.Visible = true;
+                    }
+                }
             }
-            else 
-            {
-                lblGreeting.Text = "Hello, " + Session["AdminName"].ToString();
-                lblGreeting.Visible = true;
-                btnLogin.Visible = false;
-                btnLogout.Visible = true;
-                btnRegister.Visible = false;
-            }
+
+            //if (Session["UserName"] != null)
+            //{
+            //    lblGreeting.Text = "Hello, " + Session["UserName"].ToString();
+            //    lblGreeting.Visible = true;
+            //    btnLogin.Visible = false;
+            //    btnLogout.Visible = true;
+            //    btnRegister.Visible = true;
+            //}
+            //else 
+            //{
+            //    lblGreeting.Text = "Hello, " + Session["Username"].ToString();
+            //    lblGreeting.Visible = true;
+            //    btnLogin.Visible = false;
+            //    btnLogout.Visible = true;
+            //    btnRegister.Visible = false;
+            //}
         }
+
+
+
 
         protected void btnLogout_Click(object sender, EventArgs e)
         {
@@ -46,3 +83,5 @@ namespace Conference_Registration_System
         }
     }
 }
+
+
